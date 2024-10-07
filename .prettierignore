@@ -1,0 +1,35 @@
+# Ignore build artifacts
+build
+dist
+out
+coverage
+
+# Ignore node_modules (third-party libraries)
+node_modules
+
+# Ignore specific configuration files
+*.config.js
+*.config.ts
+*.json
+
+# Ignore static files (if any)
+public/static
+public/assets
+
+# Ignore TypeScript declaration files (if needed)
+*.d.ts
+
+# Ignore test files (if you want to keep them unformatted)
+*.test.tsx
+*.test.ts
+*.spec.tsx
+*.spec.ts
+
+# Ignore all HTML files (if not needed)
+*.html
+
+# Ignore Tailwind CSS files (if you want to keep them unformatted)
+tailwind.config.js
+tailwind.config.ts
+
+# Ignore other files (add any specific files or directories as needed)
