@@ -4,6 +4,11 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
   	extend: {
+		fontFamily: {
+			philosopher: ['Philosopher', 'sans-serif'], // Add Philosopher font here
+			lato: ['Lato', 'sans-serif'],
+        	openSans: ['Open Sans', 'sans-serif'],
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
