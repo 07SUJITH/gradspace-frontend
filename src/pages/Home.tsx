@@ -1,4 +1,10 @@
-import { IconHome, IconMessage, IconStar } from '@tabler/icons-react';
+import {
+  IconHome,
+  IconInfoCircle,
+  IconMessage,
+  IconStar,
+} from '@tabler/icons-react';
+import { motion } from 'framer-motion';
 import { Calendar, MessageCircle, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -23,6 +29,13 @@ export default function Home() {
       icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
+      name: 'About',
+      link: '#about',
+      icon: (
+        <IconInfoCircle className="h-4 w-4 text-neutral-500 dark:text-white" />
+      ),
+    },
+    {
       name: 'Features',
       link: '#features',
       icon: <IconStar className="h-4 w-4 text-neutral-500 dark:text-white" />,
@@ -44,12 +57,12 @@ export default function Home() {
             '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
           )}
         />
-        <BackgroundLines>
+        <BackgroundLines className="flex justify-center md:py-3 py-20 min-h-screen">
           <section
-            className="w-full  flex justify-center py-12 md:py-24 lg:py-32 xl:py-48"
+            className="w-full  flex justify-center  py-12 md:py-24 lg:py-32 xl:py-48"
             id="home"
           >
-            <div className="container px-4 md:px-6">
+            <div className="container px-4 md:px-6 ">
               <div className="flex flex-col items-center space-y-4 text-center">
                 <div className="space-y-2">
                   {/* <SparklesText text="GradSpace" />; */}
@@ -86,6 +99,92 @@ export default function Home() {
             </div>
           </section>
         </BackgroundLines>
+
+        {/* <section
+          id="about"
+          className="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-black"
+        >
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
+            About
+          </h2>
+          <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+            In a world where social media tells the story of your life—whether
+            through who you follow or the content you consume—there’s a growing
+            need for spaces that foster meaningful, purposeful connections.
+            Gradspace was born from this realization. It’s not just about
+            scrolling through feeds; it’s about actively shaping your journey.
+            Gradspace is designed to connect students and alumni in a meaningful
+            way, helping you bridge the gap between education and professional
+            growth. Whether you’re a student looking for guidance, or an alum
+            eager to give back, this platform creates a space where knowledge,
+            experience, and opportunities can be shared without barriers. Why
+            did platforms like Gradspace come into existence? Because, while
+            traditional social media has its place, it doesn’t always serve the
+            needs of those who want to take control of their own professional
+            growth. It’s time for each of us to take charge of our own paths, to
+            build connections that truly matter, and to learn from those who
+            have walked the path before us. With Gradspace, the future of your
+            career is not left to chance. It’s about empowering you, as a
+            student or graduate, to make connections that can change your life,
+            and in turn, contribute to the success of others.
+          </p>
+        </section> */}
+
+        <section
+          id="about"
+          className="flex  flex-col lg:flex-row lg:px-28  bg-gray-100 dark:bg-black"
+        >
+          <motion.div
+            className="hidden lg:flex lg:w-1/3 items-center justify-center  "
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <DotPattern
+              className={cn(
+                '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
+              )}
+            />
+            <img src="/hoppscotch.svg" alt="" className="w-1/3" />
+          </motion.div>
+          <motion.div
+            className="flex w-full  items-center justify-center p-6"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="w-full space-y-8">
+              <h2 className="text-2xl font-extrabold  tracking-tighter sm:text-5xl mb-6 text-center md:mx-auto transition duration-500 ease-in-out sm:mt-9">
+                About
+              </h2>
+              <p className="mx-auto text-gray-700 md:text-xl dark:text-gray-400 text-justify  leading-relaxed md:max-w-3xl md:mx-auto">
+                In a world where social media tells the story of your
+                life—whether through who you follow or the content you
+                consume—there’s a growing need for spaces that foster
+                meaningful, purposeful connections. Gradspace was born from this
+                realization. It’s not just about scrolling through feeds; it’s
+                about actively shaping your journey. Gradspace is designed to
+                connect students and alumni in a meaningful way, helping you
+                bridge the gap between education and professional growth.
+                Whether you’re a student looking for guidance, or an alum eager
+                to give back, this platform creates a space where knowledge,
+                experience, and opportunities can be shared without barriers.
+                <br />
+                <br />
+                Why did platforms like Gradspace come into existence? Because,
+                while traditional social media has its place, it doesn’t always
+                serve the needs of those who want to take control of their own
+                professional growth. It’s time for each of us to take charge of
+                our own paths, to build connections that truly matter, and to
+                learn from those who have walked the path before us. With
+                Gradspace, the future of your career is not left to chance. It’s
+                about empowering you, as a student or graduate, to make
+                connections that can change your life, and in turn, contribute
+                to the success of others.
+              </p>
+            </div>
+          </motion.div>
+        </section>
 
         <section
           id="features"
