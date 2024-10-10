@@ -4,6 +4,7 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 import { Checkbox } from '@/components/ui/checkbox';
 import DotPattern from '@/components/ui/dot-pattern';
@@ -140,12 +141,12 @@ export default function Login() {
             </form>
             <p className="mt-2 text-center text-sm text-gray-600">
               Don't have an account?{' '}
-              <a
-                href="#"
+              <Link
+                to="/signup"
                 className="font-medium text-primary hover:text-primary-dark"
               >
                 Create an account
-              </a>
+              </Link>
             </p>
           </div>
         </div>
