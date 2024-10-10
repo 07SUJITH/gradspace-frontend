@@ -7,6 +7,7 @@ import {
 import { motion } from 'framer-motion';
 import { Calendar, MessageCircle, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll'; // For smooth scrolling
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { BackgroundLines } from '@/components/ui/background-lines';
@@ -93,7 +94,18 @@ export default function Home() {
                   <Link to="/signup">
                     <RainbowButton>Get Started</RainbowButton>
                   </Link>
-                  <ShinyButton>Learn More</ShinyButton>
+                  <ScrollLink
+                    key="learn_more"
+                    to="about" // Remove the '#' for the smooth scroll
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    className={cn(
+                      'relative dark:text-neutral-50 items-center cursor-pointer flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500',
+                    )}
+                  >
+                    <ShinyButton>Learn More</ShinyButton>
+                  </ScrollLink>
                 </div>
               </div>
             </div>
@@ -154,10 +166,10 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="w-full space-y-8">
-              <h2 className="text-2xl font-extrabold  tracking-tighter sm:text-5xl mb-6 text-center md:mx-auto transition duration-500 ease-in-out sm:mt-9">
+              <h2 className="text-2xl font-extrabold font-philosopher  tracking-tighter sm:text-5xl mb-6 text-center md:mx-auto transition duration-500 ease-in-out sm:mt-9">
                 About
               </h2>
-              <p className="mx-auto text-gray-700 md:text-xl dark:text-gray-400 text-justify  leading-relaxed md:max-w-3xl md:mx-auto">
+              <p className="mx-auto text-gray-700  md:text-xl dark:text-gray-400 text-justify  leading-relaxed md:max-w-3xl md:mx-auto">
                 In a world where social media tells the story of your
                 life—whether through who you follow or the content you
                 consume—there’s a growing need for spaces that foster
@@ -191,7 +203,7 @@ export default function Home() {
           className="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-black"
         >
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
+            <h2 className="text-3xl font-bold font-philosopher  tracking-tighter sm:text-5xl text-center mb-12">
               Key Features
             </h2>
             <div className="grid gap-6 items-center md:grid-cols-2 lg:grid-cols-3">
@@ -239,7 +251,7 @@ export default function Home() {
           className="w-full flex justify-center py-12 md:py-24 lg:py-32"
         >
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
+            <h2 className="text-3xl font-bold font-philosopher  tracking-tighter sm:text-5xl text-center mb-12">
               What Our Users Say
             </h2>
             <div className="grid gap-6 items-center md:grid-cols-2 lg:grid-cols-3">
@@ -318,7 +330,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                <h2 className="text-3xl font-philosopher  font-bold tracking-tighter sm:text-5xl">
                   Join GradSpace Today
                 </h2>
                 <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
