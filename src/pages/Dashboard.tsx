@@ -167,7 +167,7 @@ export default function Dashboard() {
       {/* Header */}
       <header className="bg-white shadow-sm fixed top-0 left-0 right-0 z-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-blue-600">LinkedInX</h1>
+          <h1 className="text-2xl font-bold text-blue-600">Gradspace</h1>
           <Button size="icon" variant="ghost">
             <MessageCircle className="h-6 w-6" />
           </Button>
