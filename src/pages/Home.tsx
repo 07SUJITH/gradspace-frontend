@@ -14,9 +14,11 @@ import {
   ShoppingBag,
   Users,
 } from 'lucide-react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll'; // For smooth scrolling
 
+import TermsOfService from '@/components/TermsOfService';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { BackgroundLines } from '@/components/ui/background-lines';
 import { Button } from '@/components/ui/button';
@@ -28,8 +30,9 @@ import ShinyButton from '@/components/ui/shiny-button';
 import SparklesWordPullUp from '@/components/ui/sparklesWordPullUp';
 import WordRotate from '@/components/ui/word-rotate';
 import { cn } from '@/lib/utils';
-
 export default function Home() {
+  const [showTerms, setShowTerms] = useState(false);
+
   const navItems = [
     {
       name: 'Home',
@@ -383,9 +386,12 @@ export default function Home() {
           © 2024 GradSpace. All rights reserved.
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm hover:underline underline-offset-4" to="#">
+          <button
+            className="text-sm hover:underline underline-offset-4"
+            onClick={() => setShowTerms(true)}
+          >
             Terms of Service
-          </Link>
+          </button>
 
           <Link
             className=" font-bold text-sm hover:underline underline-offset-4"
@@ -395,6 +401,7 @@ export default function Home() {
           </Link>
         </nav>
       </footer>
+      {showTerms && <TermsOfService onClose={() => setShowTerms(false)} />}
     </div>
   );
 }
