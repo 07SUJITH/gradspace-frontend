@@ -22,7 +22,7 @@ const developers = [
       'https://media.licdn.com/dms/image/v2/D5603AQHwtD551rnJAw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1725116271039?e=1733961600&v=beta&t=7qeEPjak0NZQHkt778hch3WjkhtdkmICtaF6omCX7MA',
     summary:
       'Skilled in building robust and scalable backend systems using Golang, Python, and various web frameworks.',
-    experience: '5+ years of experience in backend development',
+    experience: '3+ years of experience in backend development',
     linkedin: 'https://www.linkedin.com/in/jelan-mathew-james-571490220/',
     github: 'https://github.com/jelanmathewjames',
     icon: <Server className="w-6 h-6" />,
