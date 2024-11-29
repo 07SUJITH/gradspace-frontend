@@ -6,10 +6,10 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
+import { Button } from '@/components/ui/button';
 import DotPattern from '@/components/ui/dot-pattern';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import ShinyButton from '@/components/ui/shiny-button';
 import { cn } from '@/lib/utils';
 
 export default function Signup() {
@@ -69,7 +69,19 @@ export default function Signup() {
           <div className="max-w-md md:w-[80%] w-[80%] space-y-8">
             <div className="text-center">
               <h2 className="mt-6 text-3xl font-bold tracking-tight font-philosopher ">
-                Join <span className="text-violet-900 "> Gradspace </span>
+                Join{' '}
+                <span
+                  className={cn(
+                    'inline-block px-4',
+                    'transform skew-y-2',
+                    'bg-violet-100 dark:bg-black font-bold font-philosopher text-violet-800 ',
+                  )}
+                >
+                  <span className="transform -skew-y-2 inline-block">
+                    {' '}
+                    GradSpace
+                  </span>
+                </span>
               </h2>
             </div>
             <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -138,18 +150,16 @@ export default function Signup() {
               </div>
 
               <div className="flex justify-center p-3 ">
-                <ShinyButton>
-                  <span className="px-6 whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-dark dark:text-white dark:from-white dark:to-slate-900 lg:text-lg">
-                    sign up
-                  </span>
-                </ShinyButton>
+                <Button className="bg-violet-900/80 px-10 dark:text-white dark:bg-violet-900">
+                  Sign Up
+                </Button>
               </div>
             </form>
             <p className="mt-2 text-center text-sm text-gray-600">
               already have an account ?
               <Link
                 to="/login"
-                className="font-medium text-primary hover:text-primary-dark"
+                className="font-medium text-primary hover:text-violet-800"
               >
                 sign in
               </Link>

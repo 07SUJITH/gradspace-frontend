@@ -6,11 +6,11 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
+import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import DotPattern from '@/components/ui/dot-pattern';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import ShinyButton from '@/components/ui/shiny-button';
 import { cn } from '@/lib/utils';
 
 export default function Login() {
@@ -65,7 +65,19 @@ export default function Login() {
           <div>
             <div className="text-center">
               <h2 className="mt-6 text-3xl font-bold tracking-tight font-philosopher ">
-                Sign in to <span className="text-violet-900 "> Gradspace </span>
+                Sign in to
+                <span
+                  className={cn(
+                    'inline-block px-4',
+                    'transform skew-y-2',
+                    'bg-violet-100 dark:bg-black font-bold font-philosopher text-violet-800 ',
+                  )}
+                >
+                  <span className="transform -skew-y-2 inline-block">
+                    {' '}
+                    GradSpace
+                  </span>
+                </span>
               </h2>
             </div>
             <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -107,6 +119,7 @@ export default function Login() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <Checkbox
+                    className=" hover:bg-violet-100 dark:hover:bg-gray-800"
                     id="remember-me"
                     checked={rememberMe}
                     onCheckedChange={(checked) =>
@@ -115,7 +128,7 @@ export default function Login() {
                   />
                   <Label
                     htmlFor="remember-me"
-                    className="ml-2 block text-sm dark:text-slate-500 text-gray-900"
+                    className="ml-2 block text-sm cursor-pointer hover:text-violet-800 dark:text-slate-500 text-gray-900"
                   >
                     Remember me
                   </Label>
@@ -124,7 +137,7 @@ export default function Login() {
                 <div className="text-sm">
                   <a
                     href="#"
-                    className="font-medium text-primary hover:text-primary-dark"
+                    className="font-medium  hover:text-violet-800 text-primary "
                   >
                     Forgot your password?
                   </a>
@@ -132,18 +145,16 @@ export default function Login() {
               </div>
 
               <div className="flex justify-center p-3 ">
-                <ShinyButton>
-                  <span className="px-6 whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-dark dark:text-white dark:from-white dark:to-slate-900 lg:text-lg">
-                    sign in
-                  </span>
-                </ShinyButton>
+                <Button className="bg-violet-900/80 px-10 dark:text-white dark:bg-violet-900">
+                  Sign In
+                </Button>
               </div>
             </form>
             <p className="mt-2 text-center text-sm text-gray-600">
               Don't have an account?{' '}
               <Link
                 to="/signup"
-                className="font-medium text-primary hover:text-primary-dark"
+                className="font-medium text-primary hover:text-violet-900"
               >
                 Create an account
               </Link>
