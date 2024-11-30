@@ -20,19 +20,15 @@ import { Link as ScrollLink } from 'react-scroll'; // For smooth scrolling
 
 import TermsOfService from '@/components/TermsOfService';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { BackgroundLines } from '@/components/ui/background-lines';
+import BoxReveal from '@/components/ui/box-reveal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import DotPattern from '@/components/ui/dot-pattern';
 import { FloatingNav } from '@/components/ui/floating-navbar';
-import { RainbowButton } from '@/components/ui/rainbow-button';
 import ShinyButton from '@/components/ui/shiny-button';
-import SparklesWordPullUp from '@/components/ui/sparklesWordPullUp';
-import WordRotate from '@/components/ui/word-rotate';
 import { cn } from '@/lib/utils';
 export default function Home() {
   const [showTerms, setShowTerms] = useState(false);
-
   const navItems = [
     {
       name: 'Home',
@@ -120,40 +116,93 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <FloatingNav navItems={navItems} />
-      <main className="flex-1">
+      <main className="flex-1 ">
         <DotPattern
           className={cn(
             '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
           )}
         />
-        <BackgroundLines className="flex justify-center md:py-3 py-20 min-h-screen">
+        <div className="flex justify-center md:py-3 py-20 min-h-screen">
           <section
             className="w-full  flex justify-center  py-12 md:py-24 lg:py-32 xl:py-48"
             id="home"
           >
             <div className="container px-4 md:px-6 ">
-              <div className="flex flex-col items-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <SparklesWordPullUp
-                    text="Gradspace"
-                    sparklesCount={15}
-                    className="font-philosopher "
-                    colors={{ first: '#45287B', second: 'white' }}
-                  />
-                  <WordRotate
-                    className="text-4xl font-bold text-black dark:text-white font-philosopher "
-                    words={['Connect, Learn, and Grow Together!']}
-                  />
+              <div className="flex flex-col items-center space-y-4 text-center bg-gradient-to-br from-violet-600 to-black bg-clip-text  text-transparent dark:text-neutral-50">
+                <h1 className="mb-6  text-5xl font-bold font-philosopher tracking-tighter md:text-6xl">
+                  <BoxReveal boxColor={'#E9D5FF'} duration={0.5}>
+                    <div>
+                      <span
+                        className={cn(
+                          'inline-block px-4',
+                          'transform skew-y-2',
+                          'bg-violet-300 dark:bg-black dark:text-white/70 text-black/90 ',
+                        )}
+                      >
+                        <span className="transform -skew-y-2 inline-block">
+                          Simplify
+                        </span>
+                      </span>{' '}
+                      Your Alumni
+                    </div>
+                  </BoxReveal>
 
-                  <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                    Connect with alumni, find mentors, and explore career
-                    opportunities. Your gateway to a thriving professional
-                    network.
+                  <BoxReveal boxColor={'#E9D5FF'} duration={0.5}>
+                    <>
+                      Network,{' '}
+                      <span
+                        className={cn(
+                          'inline-block px-4',
+                          'transform -skew-y-2',
+                          'bg-violet-300 dark:bg-black dark:text-white/70 text-black/90 ',
+                        )}
+                      >
+                        <span className="transform skew-y-2 inline-block">
+                          {' '}
+                          Amplify
+                        </span>
+                      </span>
+                      <br />
+                      Connections
+                    </>
+                  </BoxReveal>
+                </h1>
+                <div className="max-w-[700px] mx-auto px-4 ">
+                  <p className="text-base sm:text-lg md:text-xl font-philosopher   text-gray-600 dark:text-white  text-center">
+                    Why struggle to bridge the gap when{' '}
+                    <span
+                      className={cn(
+                        'inline-block px-4',
+                        'transform -skew-y-2',
+                        'bg-violet-200 dark:bg-black font-bold font-philosopher text-violet-800 ',
+                      )}
+                    >
+                      <span className="transform skew-y-2 inline-block">
+                        {' '}
+                        GradSpace
+                      </span>
+                    </span>
+                    connects it for you? From{' '}
+                    <span className="font-medium">
+                      job opportunities
+                    </span> to{' '}
+                    <span className="font-medium">
+                      tailored recommendations
+                    </span>
+                    , events to meaningful connections – empower your journey
+                    with the perfect{' '}
+                    <span className="text-violet-600">
+                      student-alumni synergy
+                    </span>
+                    !
                   </p>
                 </div>
+                ;
                 <div className="gap-5 flex">
                   <Link to="/signup">
-                    <RainbowButton>Get Started</RainbowButton>
+                    <Button className="bg-violet-900/60  dark:text-white dark:bg-violet-900">
+                      Get Started
+                    </Button>
                   </Link>
                   <ScrollLink
                     key="learn_more"
@@ -171,12 +220,9 @@ export default function Home() {
               </div>
             </div>
           </section>
-        </BackgroundLines>
+        </div>
 
-        <section
-          id="about"
-          className="flex  flex-col lg:flex-row lg:px-28  bg-gray-100 dark:bg-black"
-        >
+        <section id="about" className="flex  flex-col lg:flex-row lg:px-28  ">
           <motion.div
             className="hidden lg:flex lg:w-1/3 items-center justify-center  "
             initial={{ opacity: 0, x: -50 }}
@@ -198,7 +244,18 @@ export default function Home() {
           >
             <div className="w-full space-y-8">
               <h2 className="text-2xl font-extrabold font-philosopher  tracking-tighter sm:text-5xl mb-6 text-center md:mx-auto transition duration-500 ease-in-out sm:mt-9">
-                About
+                <span
+                  className={cn(
+                    'inline-block px-4',
+                    'transform -skew-y-2',
+                    'bg-violet-200 dark:bg-black font-bold font-philosopher text-violet-800 ',
+                  )}
+                >
+                  <span className="transform skew-y-2 inline-block">
+                    {' '}
+                    About
+                  </span>
+                </span>
               </h2>
               <p className="mx-auto text-gray-700  md:text-xl dark:text-gray-400 text-justify  leading-relaxed md:max-w-3xl md:mx-auto">
                 In a world where social media tells the story of your
@@ -231,7 +288,7 @@ export default function Home() {
 
         <section
           id="features"
-          className="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-black/30 dark:to-black/40"
+          className="w-full flex justify-center py-12 md:py-24 lg:py-32 "
         >
           <div className="container px-4 md:px-6">
             <motion.h2
@@ -240,7 +297,18 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-3xl font-bold font-philosopher tracking-tighter sm:text-5xl text-center mb-12 text-gray-900 dark:text-gray-100"
             >
-              Key Features
+              <span
+                className={cn(
+                  'inline-block px-4',
+                  'transform -skew-y-2',
+                  'bg-violet-200 dark:bg-black font-bold font-philosopher text-violet-800 ',
+                )}
+              >
+                <span className="transform skew-y-2 inline-block">
+                  {' '}
+                  Key Features
+                </span>
+              </span>
             </motion.h2>
             <motion.div
               variants={containerVariants}
@@ -250,7 +318,7 @@ export default function Home() {
             >
               {features.map((feature, index) => (
                 <motion.div key={index} variants={itemVariants}>
-                  <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl dark:hover:shadow-primary/25 hover:-translate-y-2 bg-white dark:bg-black/40 border-gray-200 dark:border-gray-800">
+                  <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl dark:hover:shadow-primary/25 hover:-translate-y-2 bg-white dark:bg-black/40 border-gray-200 border-2  dark:border-gray-800">
                     <CardContent className="flex flex-col items-center space-y-4 p-6">
                       <motion.div
                         whileHover={{ scale: 1.2, rotate: 360 }}
@@ -282,7 +350,18 @@ export default function Home() {
         >
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold font-philosopher  tracking-tighter sm:text-5xl text-center mb-12">
-              What Our Users Say
+              <span
+                className={cn(
+                  'inline-block px-4',
+                  'transform -skew-y-2',
+                  'bg-violet-200 dark:bg-black font-bold font-philosopher text-violet-800 ',
+                )}
+              >
+                <span className="transform skew-y-2 inline-block">
+                  {' '}
+                  What Our Users Say
+                </span>
+              </span>
             </h2>
             <div className="grid gap-6 items-center md:grid-cols-2 lg:grid-cols-3">
               <Card>
@@ -356,7 +435,7 @@ export default function Home() {
         </section>
         <section
           id="contact"
-          className="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-black"
+          className="w-full flex justify-center py-12 md:py-24 lg:py-32 "
         >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
