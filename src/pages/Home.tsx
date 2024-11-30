@@ -128,7 +128,7 @@ export default function Home() {
             id="home"
           >
             <div className="container px-4 md:px-6 ">
-              <div className="flex flex-col items-center space-y-4 text-center bg-gradient-to-br from-violet-600 to-black bg-clip-text  text-transparent dark:text-neutral-50">
+              <div className="flex flex-col items-center space-y-4 text-center text-violet-900  dark:text-neutral-50">
                 <h1 className="mb-6  text-5xl font-bold font-philosopher tracking-tighter md:text-6xl">
                   <BoxReveal boxColor={'#E9D5FF'} duration={0.5}>
                     <div>
@@ -200,7 +200,7 @@ export default function Home() {
                 ;
                 <div className="gap-5 flex">
                   <Link to="/signup">
-                    <Button className="bg-violet-900/60  dark:text-white dark:bg-violet-900">
+                    <Button className="bg-violet-900  dark:text-white dark:bg-violet-900">
                       Get Started
                     </Button>
                   </Link>
