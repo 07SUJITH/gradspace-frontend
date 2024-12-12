@@ -18,6 +18,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll'; // For smooth scrolling
 
+import AnimatedLogo from '@/components/AnimatedLogo/AnimatedLogo';
 import TermsOfService from '@/components/TermsOfService';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import BoxReveal from '@/components/ui/box-reveal';
@@ -234,7 +235,8 @@ export default function Home() {
                 '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
               )}
             />
-            <img src="/hoppscotch.svg" alt="" className="w-1/3" />
+            {/* <img src="/hoppscotch.svg" alt="" className="w-1/3" /> */}
+            <AnimatedLogo />
           </motion.div>
           <motion.div
             className="flex w-full  items-center justify-center p-6"

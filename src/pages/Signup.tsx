@@ -6,6 +6,7 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
+import AnimatedLogo from '@/components/AnimatedLogo/AnimatedLogo';
 import { Button } from '@/components/ui/button';
 import DotPattern from '@/components/ui/dot-pattern';
 import { Input } from '@/components/ui/input';
@@ -52,7 +53,8 @@ export default function Signup() {
             '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
           )}
         />
-        <img src="/hoppscotch.svg" alt="" className="w-1/3" />
+        {/* <img src="/hoppscotch.svg" alt="" className="w-1/3" /> */}
+        <AnimatedLogo />
       </motion.div>
       <motion.div
         className="flex w-full lg:w-1/2 items-center justify-center p-8"
