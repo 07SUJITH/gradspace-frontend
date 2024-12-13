@@ -7,12 +7,11 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 import AnimatedLogo from '@/components/AnimatedLogo/AnimatedLogo';
+import DotBackground from '@/components/DotBackground';
 import { Button } from '@/components/ui/button';
-import DotPattern from '@/components/ui/dot-pattern';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
-
 export default function Signup() {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -42,17 +41,13 @@ export default function Signup() {
 
   return (
     <div className="flex flex-col lg:flex-row lg:px-28">
+      <DotBackground />
       <motion.div
         className="hidden lg:flex lg:w-1/2 items-center justify-center  "
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <DotPattern
-          className={cn(
-            '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
-          )}
-        />
         {/* <img src="/hoppscotch.svg" alt="" className="w-1/3" /> */}
         <AnimatedLogo />
       </motion.div>
@@ -62,11 +57,6 @@ export default function Signup() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <DotPattern
-          className={cn(
-            '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
-          )}
-        />
         <div className=" w-full flex justify-center items-center min-h-[80vh]  max-w-md  space-y-8">
           <div className="max-w-md md:w-[80%] w-[80%] space-y-8">
             <div className="text-center">

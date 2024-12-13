@@ -24,10 +24,11 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import BoxReveal from '@/components/ui/box-reveal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import DotPattern from '@/components/ui/dot-pattern';
 import { FloatingNav } from '@/components/ui/floating-navbar';
 import ShinyButton from '@/components/ui/shiny-button';
 import { cn } from '@/lib/utils';
+
+import DotBackground from '../components/DotBackground';
 export default function Home() {
   const [showTerms, setShowTerms] = useState(false);
   const navItems = [
@@ -116,13 +117,9 @@ export default function Home() {
   };
   return (
     <div className="flex flex-col min-h-screen">
+      <DotBackground />
       <FloatingNav navItems={navItems} />
       <main className="flex-1 ">
-        <DotPattern
-          className={cn(
-            '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
-          )}
-        />
         <div className="flex justify-center md:py-3 py-20 min-h-screen">
           <section
             className="w-full  flex justify-center  py-12 md:py-24 lg:py-32 xl:py-48"
@@ -230,11 +227,6 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <DotPattern
-              className={cn(
-                '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
-              )}
-            />
             {/* <img src="/hoppscotch.svg" alt="" className="w-1/3" /> */}
             <AnimatedLogo />
           </motion.div>
