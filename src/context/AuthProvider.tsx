@@ -22,7 +22,7 @@ import { useNavigate } from 'react-router-dom';
 
 import axiosInstance from '../config/axiosInstance';
 
-interface AuthContextType {
+export interface AuthContextType {
   auth: AuthState | null;
   setAuth: React.Dispatch<React.SetStateAction<AuthState | null>>;
   persist: boolean;
